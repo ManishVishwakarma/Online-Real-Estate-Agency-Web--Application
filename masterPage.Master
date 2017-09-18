@@ -1,0 +1,101 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="masterPage.Master.cs" Inherits="Look4Home.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <style>
+        #footer {
+            width: auto;
+            height: 150px;
+            clear: both;
+            position:relative;
+            background: #2b2f3a;
+        }
+
+            #footer p {
+                padding: 14px 0 0 0;
+                font: 11px/16px Tahoma, sans-serif;
+                font-weight: normal;
+                text-align: center;
+                color: #fff;
+            }
+
+                #footer p a {
+                    font: 11px/16px Tahoma, sans-serif;
+                    font-weight: normal;
+                    color: #fff;
+                    text-decoration: none;
+                    padding: 0 3px;
+                }
+
+        .admin_login {
+position:absolute;
+left:870px;
+top:5px;
+        }
+
+        #footer p a:hover {
+            text-decoration: underline;
+            color: #c8dfe0;
+        }
+    </style>
+    <link rel="stylesheet" href="css/masterstyles.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/masterscript.js"></script>
+   <script type="text/javascript" src="jquery-1.8.3.js"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body style="background-image:url('Images/backgroundImg.jpg');background-size: cover;
+    background-repeat: no-repeat;">
+    <form id="Form_master" runat="server">
+        <div id="footer1" style="background-color: #2b2f3a; position: relative; border: #2b2f3a;">
+            <img src="Images/Header_Background.jpg" width="1000" height="200" style="margin-top: -25px" />
+            <asp:Button ID="admin_login" CssClass="admin_login" runat="server" Text="Admin" OnClick="admin_login_Click" />
+        </div>
+
+
+        <div id='cssmenu'>
+            <ul>
+                <li><a href="homePage.aspx"><span>Home</span></a></li>
+                <li><a id="postad" runat="server" href="AddPost.aspx"><span>Post Ad.</span></a></li>
+                <li id="editLink" runat="server" class='last'><a href='EditProfile.aspx'><span>Edit Profile</span></a>
+                </li>
+
+                <li><a href="AboutUs.aspx"><span>About Us</span></a></li>
+                <li class='last'><a href="Contact.aspx"><span>Contact</span></a></li>
+                <li id="logout" runat="server" style="text-align: right; float: right; padding-right: 30px;">
+                    <asp:Button ID="btnLogout" runat="server" Text="Log out" OnClick="btnLogout_Click" /></li>
+
+                <li class='last' style="text-align: right; float: right; font-weight: bold; font-size: 20px; padding-right: 30px;">
+                    <asp:Label ID="userEmail_Label" runat="server" ForeColor="White"></asp:Label></li>
+
+                <li id="signup" style="text-align: right; float: right; padding-right: 30px;"><a id="signup_href" runat="server" href="Sign Up.aspx">Sign up</a></li>
+
+                <li id='login' runat="server" style="text-align: right; float: right; padding-right: 43px;"><a id="login_trigger" runat="server" href="Login.aspx"><span>Log In</span></a></li>
+            </ul>
+        </div>
+
+
+
+        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div>
+            
+
+            <div id="footer">
+                <h3 style="color:#999999;font-size:20px;">Also avaliable in : 
+                <img src="Images/Google_play_store_logo.gif" alt="Google Play Store" style="height: 47px; width: 149px;margin-bottom:-10px;" /></h3>
+                <p>
+                    <a href="homePage.aspx">HOME PAGE</a> | <a href="AboutUs.aspx">ABOUT US</a> | <a href="#">CATALOGUE</a> | <a href="#">SUPPORT</a> | <a href="#">CONTACTS</a><br />
+                   All trademarks, logos and names are properties of their respective owners. All Rights Reserved. Copyright &copy; LOOK 4 HOME 2015
+                </p>
+            </div>
+        </div>
+    </form>
+
+</body>
+</html>
